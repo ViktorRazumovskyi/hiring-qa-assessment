@@ -1,5 +1,6 @@
 import { Body, JsonController, Post } from "routing-controllers";
 import { V1_API_DOMAIN } from "../../constants";
+import fetch from "node-fetch";
 
 
 export interface AuthorizedUser {
