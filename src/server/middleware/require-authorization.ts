@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import fetch from "node-fetch";
 import {
   ExpressMiddlewareInterface,
-  Middleware,
   UnauthorizedError,
 } from "routing-controllers";
 import { V1_API_DOMAIN } from "../../constants";
@@ -15,7 +14,6 @@ import { V1_API_DOMAIN } from "../../constants";
  * @param {NextFunction} next
  * @throws {UnauthorizedError}
  */
-@Middleware({ type: "before" })
 export class AuthMiddleware implements ExpressMiddlewareInterface {
   async use(request: Request, response: Response, next: NextFunction) {
     const authHeader = request.headers.authorization;
